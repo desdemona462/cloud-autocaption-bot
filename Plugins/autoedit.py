@@ -45,15 +45,15 @@ async def editing(bot, message):
       if (message.document or message.video or message.audio): 
           media = message.audio or message.video or message.document or message.animation
           if message.video:
-            New_duration = f"\n**File Duration:** `{convert(media.duration)}`\n"
+            New_duration = f"\n**⏳File Duration:** `{convert(media.duration)}`\n"
           elif message.caption:                        
              file_caption = f"**{message.caption}**"
           else:
              file_caption = ""
           file = media.file_name
           new_file = file.replace("-", " ").replace("@", " ").replace("_", " ").replace("avi", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
-          New_name = "**File Name:** " + new_file
-          New_size = f"**File Size:** `{get_readable_file_size(media.file_size)}`\n\n"
+          New_name = "**📑File Name:** " + new_file
+          New_size = f"**💾File Size:** `{get_readable_file_size(media.file_size)}`\n\n"
       try:
           if caption_position == "top":
              await bot.edit_message_caption(
@@ -80,7 +80,7 @@ async def editing(bot, message):
                  await bot.edit_message_caption(
                  chat_id = message.chat.id,
                  message_id = message.message_id,
-                 caption = New_name + New_size + caption_text, 
+                 caption = New_name + "\n" + New_size + caption_text, 
                  parse_mode = "markdown"
              )
                 
