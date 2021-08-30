@@ -26,11 +26,11 @@ async def editing(bot, message):
       if (message.document or message.video or message.audio): 
           if message.caption:                        
              file_caption = f"**{message.caption}**"
-             file = media.file_name
+             file = message.file_name
              new_file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
           else:
              file_caption = ""
-             file = media.file_name
+             file = message.file_name
              new_file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
                                                  
       try:
