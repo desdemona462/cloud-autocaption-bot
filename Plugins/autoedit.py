@@ -44,7 +44,7 @@ async def editing(bot, message):
          pass 
       if (message.document or message.video or message.audio): 
           media = message.audio or message.video or message.document or message.animation
-              if message.video:
+          if message.video:
             New_duration = f"\n**File Duration:** `{convert(media.duration)}`\n"
           elif message.caption:                        
              file_caption = f"**{message.caption}**"
