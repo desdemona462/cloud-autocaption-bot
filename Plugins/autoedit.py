@@ -27,32 +27,32 @@ async def editing(bot, message):
           if message.caption:                        
              file_caption = f"**{message.caption}**"
              file = media.file_name
-             _file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
+             new_file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
           else:
              file_caption = ""
              file = media.file_name
-             _file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
+             new_file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
                                                  
       try:
           if caption_position == "top":
              await bot.edit_message_caption(
                  chat_id = message.chat.id, 
                  message_id = message.message_id,
-                 caption = _file + "\n\n" + caption_text + "\n" + file_caption,
+                 caption = {new_file} + "\n\n" + caption_text + "\n" + file_caption,
                  parse_mode = "markdown"
              )
           elif caption_position == "bottom":
              await bot.edit_message_caption(
                  chat_id = message.chat.id, 
                  message_id = message.message_id,
-                 caption = _file + "\n\n" + file_caption + "\n" + caption_text,
+                 caption = {new_file} + "\n\n" + file_caption + "\n" + caption_text,
                  parse_mode = "markdown"
              )
           elif caption_position == "nil":
              await bot.edit_message_caption(
                  chat_id = message.chat.id,
                  message_id = message.message_id,
-                 caption = _file + "\n\n" + caption_text, 
+                 caption = {new_file} + "\n\n" + caption_text, 
                  parse_mode = "markdown"
              ) 
       except:
