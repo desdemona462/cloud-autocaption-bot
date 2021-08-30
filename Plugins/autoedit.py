@@ -21,7 +21,7 @@ def convert(seconds):
     seconds %= 3600
     minutes = seconds // 60
     seconds %= 60
-return "%d:%02d:%02d" % (hour, minutes, seconds)
+    return "%d:%02d:%02d" % (hour, minutes, seconds)
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 def get_readable_file_size(size_in_bytes):
