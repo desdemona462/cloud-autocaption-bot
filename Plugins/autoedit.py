@@ -51,7 +51,7 @@ async def editing(bot, message):
           else:
              file_caption = ""
           file = media.file_name
-          new_file = file.replace("-", " ").replace("@", " ").replace("_", " ").replace("avi", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
+          new_file = file.replace("-", " ").replace(".", " ").replace("@", " ").replace("_", " ").replace(".avi", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
           New_name = "**📑File Name:** " + new_file
           New_size = f"**💾File Size:** `{get_readable_file_size(media.file_size)}`\n\n"
       try:
