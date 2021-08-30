@@ -27,11 +27,11 @@ async def editing(bot, message):
           if message.caption:                        
              file_caption = f"**{message.caption}**"
              file = message.file_name
-             new_file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
+             new_file = file.replace("-", " ").replace("@", " ").replace("_", " ").replace("avi", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
           else:
              file_caption = ""
              file = message.file_name
-             new_file = file.replace("-", " ").replace("@", " ").replace("_", " ")..replace("avi", " ")replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
+             new_file = file.replace("-", " ").replace("@", " ").replace("_", " ").replace("avi", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
                                                  
       try:
           if caption_position == "top":
