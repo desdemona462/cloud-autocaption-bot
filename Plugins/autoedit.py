@@ -76,12 +76,12 @@ async def editing(bot, message):
                  parse_mode = "markdown"
              )
            elif caption_position == "nil" and message.document:
-            await bot.edit_message_caption(
-                 chat_id = message.chat.id,
-                 message_id = message.message_id,
-                 caption = New_name + New_size + caption_text, 
-                 parse_mode = "markdown"
-             )
+						await bot.edit_message_caption(
+						   chat_id = message.chat.id,
+						   message_id = message.message_id,
+						   caption = New_name + New_size + caption_text, 
+						   parse_mode = "markdown"
+               )
                 
       except:
           pass
