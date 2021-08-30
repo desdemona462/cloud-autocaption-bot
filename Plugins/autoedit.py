@@ -69,14 +69,14 @@ async def editing(bot, message):
                  caption = New_name + "\n\n" + file_caption + "\n" + caption_text,
                  parse_mode = "markdown"
              )
-          elif caption_position == "nil":
+          elif (caption_position == "nil" and message.video):
              await bot.edit_message_caption(
                  chat_id = message.chat.id,
                  message_id = message.message_id,
                  caption = New_name + New_duration + New_size + caption_text, 
                  parse_mode = "markdown"
              )
-          elif caption_position == "nil" and message.document:
+          elif (caption_position == "nil" and message.document):
                  await bot.edit_message_caption(
                  chat_id = message.chat.id,
                  message_id = message.message_id,
