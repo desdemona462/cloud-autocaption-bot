@@ -14,25 +14,25 @@ from database.database import *
 usercaption_position = Config.CAPTION_POSITION
 caption_position = usercaption_position.lower()
 
-   # ---size and duration--- started        
-    def convert(seconds):
-        seconds = seconds % (24 * 3600)
-        hour = seconds // 3600
-        seconds %= 3600
-        minutes = seconds // 60
-        seconds %= 60
-        return "%d:%02d:%02d" % (hour, minutes, seconds)
-   
-    SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
-    def get_readable_file_size(size_in_bytes):
-        if size_in_bytes == 0:
-            return '0B'
-        index = 0
-        while size_in_bytes >= 1024:
-            size_in_bytes /= 1024
-            index += 1
-        return f'{round(size_in_bytes, 2)}{SIZE_UNITS[index]}'
-   # ---size and duration--- ended
+# ---size and duration--- started        
+def convert(seconds):
+    seconds = seconds % (24 * 3600)
+    hour = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+return "%d:%02d:%02d" % (hour, minutes, seconds)
+
+SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+def get_readable_file_size(size_in_bytes):
+    if size_in_bytes == 0:
+        return '0B'
+    index = 0
+    while size_in_bytes >= 1024:
+        size_in_bytes /= 1024
+        index += 1
+    return f'{round(size_in_bytes, 2)}{SIZE_UNITS[index]}'
+# ---size and duration--- ended
   
 @autocaption.on_message(filters.channel & (filters.document | filters.video | filters.audio ) & ~filters.edited, group=-1)
 async def editing(bot, message):
